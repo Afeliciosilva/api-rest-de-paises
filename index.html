@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Where in the world?</title>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap" rel="stylesheet">
+
+        <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet">
+
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <header class="header">
+            <div class="container header__container">
+            <h1 class="logo">Where in the world?</h1>
+            <button id="theme-toggle" class="btn btn--theme">
+                <i class="ri-moon-line"></i> Dark Mode
+            </button>
+            </div>
+        </header>
+
+        <main class="main">
+            <section class="container controls">
+            <label for="search-input" class="sr-only">Search for a country</label>
+            <div class="search-box">
+                <i class="ri-search-line"></i>
+                <input type="search" id="search-input" placeholder="Search for a country..." aria-label="Search for a country">
+            </div>
+
+            <label for="region-filter" class="sr-only">Filter by region</label>
+            <select id="region-filter" aria-label="Filter by region">
+                <option value="">Filter by Region</option>
+                <option value="africa">Africa</option>
+                <option value="americas">Americas</option>
+                <option value="asia">Asia</option>
+                <option value="europe">Europe</option>
+                <option value="oceania">Oceania</option>
+            </select>
+            </section>
+
+            <section id="countries-container" class="container countries" aria-live="polite">
+            <!-- Cards dos países são renderizados via JS -->
+            </section>
+
+            <section id="country-detail" class="container country-detail hidden" aria-live="polite">
+            <!-- Detalhes do país são renderizados via JS -->
+            </section>
+        </main>
+
+        <script src="js/app.js" defer></script>
+    </body>
+</html>

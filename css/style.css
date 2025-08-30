@@ -1,0 +1,225 @@
+/* ---------- Base ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+    :root {
+    --DarkBlue: #2b3945;
+    --VeryDarkBlue: #202c37;
+    --White: #ffffff;
+    --LightGray: #fafafa;
+    --DarkGray: #858585;
+
+    --Background: var(--LightGray);
+    --Elements: var(--White);
+    --Text: var(--VeryDarkBlue);
+    }
+
+    [data-theme="dark"] {
+    --Background: var(--VeryDarkBlue);
+    --Elements: var(--DarkBlue);
+    --Text: var(--White);
+    }
+
+body {
+  font-family: 'Nunito Sans', sans-serif;
+  background-color: var(--Background);
+  color: var(--Text);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* ---------- Utility ---------- */
+    .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    }
+
+    .hidden {
+    display: none !important;
+    }
+
+    .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0, 0, 0, 0);
+    white-space: nowrap;
+    }
+
+/* ---------- Header ---------- */
+    .header {
+    background-color: var(--Elements);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+        .header__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 0;
+        }
+
+    .logo {
+    font-size: 1.25rem;
+    font-weight: 800;
+    }
+
+    .btn {
+    cursor: pointer;
+    border: none;
+    background: none;
+    font-weight: 600;
+    color: var(--Text);
+    }
+
+        .btn--theme {
+        display: flex;
+        align-items: center;
+        gap: .5rem;
+        }
+
+/* ---------- Controls ---------- */
+    .controls {
+    margin: 2rem 0;
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+    }
+
+    .search-box {
+    display: flex;
+    align-items: center;
+    background-color: var(--Elements);
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    flex: 1;
+    max-width: 500px;
+    }
+
+        .search-box input {
+        flex: 1;
+        border: none;
+        outline: none;
+        margin-left: 0.5rem;
+        background: transparent;
+        color: var(--Text);
+        }
+
+    #region-filter {
+    background-color: var(--Elements);
+    border: none;
+    padding: 0.75rem 1rem;
+    border-radius: 0.25rem;
+    color: var(--Text);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+/* ---------- Countries Grid ---------- */
+    .countries {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 2rem;
+    }
+
+    .country-card {
+    background-color: var(--Elements);
+    border-radius: 0.35rem;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    }
+
+        .country-card:hover {
+        transform: translateY(-5px);
+        }
+
+        .country-card img {
+        height: 160px;
+        object-fit: cover;
+        }
+
+        .country-card .info {
+        padding: 1rem;
+        }
+
+        .country-card h2 {
+        font-size: 1rem;
+        margin-bottom: 1rem;
+        }
+
+        .country-card p {
+        font-size: 0.875rem;
+        margin-bottom: 0.5rem;
+        }
+
+/* ---------- Country Detail ---------- */
+    .country-detail button {
+    margin-bottom: 2rem;
+    padding: 0.5rem 1.5rem;
+    background-color: var(--Elements);
+    border: none;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    cursor: pointer;
+    border-radius: 0.25rem;
+    color: var(--Text);
+    }
+
+        .country-info {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+        }
+
+        .country-info img {
+        width: 100%;
+        max-height: 300px;
+        object-fit: contain;
+        }
+
+        .country-info h1 {
+        margin-bottom: 1rem;
+        }
+
+        .country-info ul {
+        list-style: none;
+        padding: 0;
+        margin-bottom: 2rem;
+        }
+
+        .country-info ul li {
+        margin-bottom: 0.5rem;
+        }
+
+    .country-borders span {
+    display: inline-block;
+    background: var(--Elements);
+    padding: 0.25rem 1rem;
+    margin: 0.25rem;
+    border-radius: 0.25rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+
+/* ---------- Responsive ---------- */
+    @media (max-width: 768px) {
+    .controls {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .country-info {
+        grid-template-columns: 1fr;
+    }
+    }
